@@ -34,6 +34,18 @@ pipeline {
             }
         }
 
+        stage('Package') {
+            steps {
+                script {
+                    // Example build step for Maven (if you are using Java)
+                    zsh "mvn package"
+
+                    // If you're using Node.js (e.g., npm for front-end projects)
+                    //sh 'npm install'
+                }
+            }
+        }
+        
         stage('Deploy') {
             steps {
                 script {
