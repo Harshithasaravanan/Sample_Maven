@@ -1,9 +1,6 @@
 pipeline {
     agent any
 
-    environment {
-        SHELL = '/bin/zsh'  // Set default shell to zsh
-    }
     
     stages {
         stage('Checkout') {
