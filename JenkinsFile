@@ -1,8 +1,6 @@
 pipeline {
-    agent any  // Run the pipeline on any available Jenkins agent
-
-    tools{
-        maven 'Maven_3.24'
+    agent {
+        docker { image 'maven:3.9.9-openjdk-11' }  // Maven + OpenJDK Docker image
     }
     
     stages {
