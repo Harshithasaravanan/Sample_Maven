@@ -13,7 +13,7 @@ pipeline {
             steps {
                 script {
                     // Example build step for Maven (if you are using Java)
-                    sh "mvn clean install"
+                    zsh "mvn clean install"
 
                     // If you're using Node.js (e.g., npm for front-end projects)
                     //sh 'npm install'
@@ -26,10 +26,10 @@ pipeline {
                 script {
                     // Run unit tests (replace with your test command)
                     // For Java projects
-                    // sh 'mvn test'
+                    zsh 'mvn test'
 
                     // For Node.js projects
-                    sh 'npm test'
+                    // sh 'npm test'
                 }
             }
         }
