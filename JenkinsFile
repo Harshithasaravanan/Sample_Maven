@@ -1,5 +1,9 @@
 pipeline {
     agent any
+
+    environment {
+        SHELL = '/bin/zsh'  // Set default shell to zsh
+    }
     
     stages {
         stage('Checkout') {
@@ -12,7 +16,7 @@ pipeline {
             steps {
                 script {
                     // Example build step for Maven (if you are using Java)
-                    sh 'zsh -c "mvn compile"'
+                    sh "mvn compile"
 
                     // If you're using Node.js (e.g., npm for front-end projects)
                     //sh 'npm install'
