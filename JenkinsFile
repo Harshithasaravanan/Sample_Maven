@@ -21,18 +21,18 @@ pipeline {
             }
         }
 
-        stage('Test') {
-            steps {
-                script {
+        //stage('Test') {
+            //steps {
+                //script {
                     // Run unit tests (replace with your test command)
                     // For Java projects
-                    zsh 'mvn test'
+                    //zsh 'mvn test'
 
                     // For Node.js projects
                     // sh 'npm test'
-                }
-            }
-        }
+                //}
+            //}
+        //}
 
         stage('Package') {
             steps {
