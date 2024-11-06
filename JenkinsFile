@@ -1,0 +1,61 @@
+pipeline {
+    agent any  // Run the pipeline on any available Jenkins agent
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                // Checkout the code from your GitHub repo
+                git url: 'https://github.com/Harshithasaravanan/Sample_Maven.git', branch: 'main'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                script {
+                    // Example build step for Maven (if you are using Java)
+                    // sh 'mvn clean install'
+
+                    // If you're using Node.js (e.g., npm for front-end projects)
+                    sh 'npm install'
+                }
+            }
+        }
+
+        stage('Test') {
+            steps {
+                script {
+                    // Run unit tests (replace with your test command)
+                    // For Java projects
+                    // sh 'mvn test'
+
+                    // For Node.js projects
+                    sh 'npm test'
+                }
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                script {
+                    // Example deploy step (replace with actual deployment logic)
+                    echo 'Deploying the application...'
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            // Clean up actions or notifications (e.g., Slack, email)
+            echo 'Pipeline complete!'
+        }
+
+        success {
+            echo 'Pipeline succeeded!'
+        }
+
+        failure {
+            echo 'Pipeline failed!'
+        }
+    }
+}
