@@ -21,41 +21,6 @@ pipeline {
             }
         }
 
-        //stage('Test') {
-            //steps {
-                //script {
-                    // Run unit tests (replace with your test command)
-                    // For Java projects
-                    //zsh 'mvn test'
-
-                    // For Node.js projects
-                    // sh 'npm test'
-                //}
-            //}
-        //}
-
-        stage('Package') {
-            steps {
-                script {
-                    // Example build step for Maven (if you are using Java)
-                    zsh "mvn package"
-
-                    // If you're using Node.js (e.g., npm for front-end projects)
-                    //sh 'npm install'
-                }
-            }
-        }
-        
-        stage('Deploy') {
-            steps {
-                script {
-                    // Example deploy step (replace with actual deployment logic)
-                    echo 'Deploying the application...'
-                }
-            }
-        }
-    }
-
     post {
         always {
             // Clean up actions or notifications (e.g., Slack, email)
