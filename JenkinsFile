@@ -13,7 +13,7 @@ pipeline {
             steps {
                 script {
                     // Example build step for Maven (if you are using Java)
-                    bash "mvn compile"
+                    sh "mvn compile"
 
                     // If you're using Node.js (e.g., npm for front-end projects)
                     //sh 'npm install'
